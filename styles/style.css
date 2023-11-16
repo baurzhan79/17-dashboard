@@ -1,0 +1,479 @@
+/* --------------- Menu ------------- */
+.menu {
+    width: 96px;
+    min-height: 100vh;
+    display: flex;
+    background: #F2F2F2;
+
+    position: fixed;
+    top: 0;
+    left: 0; 
+    
+    z-index: 2;
+}
+
+.menu-content {
+    background: #FFF;
+    flex-grow: 1;    
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.menu-logo {
+    width: 36px;
+    height: 36px;
+    background: url("../design/icon-logo.png") center no-repeat;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.menu-logo:hover {
+    transform: scale(1.5);
+    transition: all 0.3s;
+}
+
+.menu-hr {
+    margin: 0;
+    width: calc(100% - 26px);
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 72px;
+}
+
+.menu-items {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    display: block;
+    padding-top: 35px;    
+    padding-bottom: 35px;
+    padding-left: 30px;
+    opacity: 0.2;
+    transition: all 0.5s;
+}
+
+.menu-item-user {
+    background: url("../design/icon-human.png") center no-repeat;
+}
+
+.menu-item-home {
+    background: url("../design/icon-cloud.png") center no-repeat;
+}
+
+.menu-item-settings {
+    background: url("../design/icon-gear.png") center no-repeat;
+    margin-top: auto;
+}
+
+.menu-item:hover {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+
+/* --------------- Submenu ------------- */
+.submenu {
+    background: #FFFFFF;
+    box-shadow: 20px 0px 20px rgb(0 0 0 / 25%);
+    max-width: 227px;
+    width: 100%;
+    display: flex;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-300px);
+    transition: all 0.5s;
+}
+
+.submenu-content {
+    flex-grow: 1;
+    padding-left: 32px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.menu-item:focus ~ .submenu {
+    transform: translateX(88px);
+}
+
+.menu-item-user:focus ~ .submenu .submenu-user,
+.menu-item-home:focus ~ .submenu .submenu-home,
+.menu-item-settings:focus ~ .submenu .submenu-settings
+{
+    display: block;
+}
+
+.submenu-title {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #221A44;
+    padding-top: 22px;
+    padding-bottom: 25px;
+}
+
+.submenu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-list-item {
+    padding-bottom: 16px;
+}
+
+.submenu-list-item-link {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 25px;
+    color: #4E4E4E;
+}
+
+.submenu-list-item-link:hover {
+    color: rgba(25, 90, 187, 1);
+}
+
+
+/* --------------- Form ------------- */
+.form {
+    background: #F2F2F2;
+    margin-left: 96px;
+    width: calc(100% - 96px);
+    z-index: 1;
+}
+
+.form-header {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search {
+    margin-top: 26px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-btn {
+    border: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url("../design/icon-search.png") center no-repeat;
+    transition: all 0.5s;
+}
+
+.search-btn:hover {
+    transform: rotate(360deg);
+}
+
+.search-input {
+    width: calc(100% - 20px);
+    border: 1px solid #D6D5D5;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 5px;
+}
+
+.search-input::-webkit-input-placeholder, /* Chrome/Opera/Safari */
+.search-input::-moz-placeholder, /* Firefox 19+ */
+.search-input:-ms-input-placeholder, /* IE 10+ */
+.search-input:-moz-placeholder /* Firefox 18- */
+{
+    opacity: 0.4;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.users-link {
+    margin-top: 26px;
+    margin-left: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.users-link-active::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #34B53A;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+.cards {
+    margin: 40px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: #FFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-big {
+    flex-basis: 100%;
+}
+
+.card-small {
+    flex-basis: calc(50% - 60px);
+    min-width: 190px;
+}
+
+
+/* --------------- Table ------------- */
+.card-table {
+    overflow-x: scroll;
+}
+
+table, td, th, tr {
+    border-collapse: collapse;
+    border-spacing: 0;         	
+}
+
+.table {
+    min-width: 500px;
+}
+
+.table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table td {
+    padding: 20px 5px;
+}
+
+.table td:first-child {
+    padding-left: 0;
+}
+
+.col-avatar {
+    width: 40px;
+}
+
+.col-name,
+.col-date,
+.col-time {
+    min-width: 100px;
+}
+
+.col-date,
+.col-time {
+    opacity: 0.4;
+}
+
+.col-sum {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 29px;
+    text-align: right;
+}
+
+.card-header {
+    margin-top: 30px;
+}
+
+.card-header-gallery {
+    position: relative;
+}
+
+.card-header-link:hover ~ .card-header-btn {
+    background-color: cadetblue;
+    transition: all 0.5s;
+}
+
+.card-header-link-img {
+    display: block;
+    width: 100%;
+}
+
+.card-header-link:hover > .card-header-link-img {
+    transition: all 0.5s;
+    transform: scale(1.2);
+}
+
+.card-btn-position {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.card-header-btn {
+    color: inherit;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.card-title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 29px;
+    margin-top: 20px;
+}
+
+.card-text {
+    opacity: 0.4;
+    margin: 15px 0;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.card-list-item {
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.card-list-item::before {
+    content: url("../design/icon-arrow.png");
+    width: 15px;
+    height: 15px;
+    padding-right: 10px;
+}
+
+.card-list-item-text {
+    opacity: 0.4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.card-footer-col {
+    display: flex;
+    align-items: center;
+}
+
+.card-footer-link {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.card-footer-link-graphics {
+    background: #FFE5D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
+.card-subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-subscribe-title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 29px;
+    text-align: center;
+    max-width: 350px; 
+    margin-top: 60px;   
+}
+
+.card-subscribe-subtitle {
+    text-align: center;
+    opacity: 0.4;
+    max-width: 280px;
+    margin: 10px;
+}
+
+.card-subscribe-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    background: #F8F8F8;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.card-subscribe-input {
+    flex-grow: 1;
+    border: 0;
+    margin: 10px;
+    background: #F8F8F8;
+}
+
+.card-subscribe-input::-webkit-input-placeholder, /* Chrome/Opera/Safari */
+.card-subscribe-input::-moz-placeholder, /* Firefox 19+ */
+.card-subscribe-input:-ms-input-placeholder, /* IE 10+ */
+.card-subscribe-input:-moz-placeholder /* Firefox 18- */
+{
+    opacity: 0.4;
+    font-size: 10px;
+}
+
+.card-subscribe-btn {
+    cursor: pointer;
+    color: #FFF;
+    background: #4339F2;
+    border: 1px solid #4339F2;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin: 10px;
+    transition: all 0.5s;    
+}
+
+.card-subscribe-btn:hover {
+    background: #FFF;
+    color: #4339F2;
+    border: 1px solid #4339F2;
+}
+
+.card-subscribe-footer {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.card-subscribe-footer-text {
+    opacity: 0.4;
+}
+
+.card-subscribe-footer-link {
+    color: #4339F2;
+}
